@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malak × Salma 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<!-- THEME SWITCHER -->
+<div id="themeSwitcher" class="theme-switcher">
+  <button onclick="switchTheme('girly')" class="theme-btn active" data-theme="girly">💖 Girly</button>
+  <button onclick="switchTheme('ocean')" class="theme-btn" data-theme="ocean">🌊 Ocean</button>
+  <button onclick="switchTheme('sunset')" class="theme-btn" data-theme="sunset">🌅 Sunset</button>
+  <button onclick="switchTheme('forest')" class="theme-btn" data-theme="forest">🌲 Forest</button>
+  <button onclick="switchTheme('midnight')" class="theme-btn" data-theme="midnight">🌙 Midnight</button>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="login-container">
+  <div class="login-card">
+    <h1>💖 Malak × Salma Universe</h1>
+    <p>Enter password to unlock your world</p>
+    <input id="pass" type="password" placeholder="Password" onkeypress="if(event.key==='Enter') check()">
+    <button onclick="check()">Unlock 💌</button>
+    <p style="font-size: 0.8em; margin-top: 20px; opacity: 0.7;">Hint: "Love you bestie"</p>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div id="loading" class="loading-container" style="display:none;">
+  <h2>Loading your memories with Salma… 💫</h2>
+  <p id="dots" class="loading-dots">💖</p>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="app-container">
+
+  <header class="app-header">
+    <h1>💖 Malak × Salma</h1>
+    <p>Trauma bonded, gossip powered, forever friends 💕</p>
+  </header>
+
+  <!-- STORY -->
+  <div class="card">
+    <h2>Our Story 🌸</h2>
+    <p>
+      We weren't close in Year 10… but somehow we became this.
+      Five years of chaos, healing, overthinking texts, boys drama,
+      family support, laughter and emotional survival 💖
+    </p>
+  </div>
+
+  <!-- COMPATIBILITY -->
+  <div class="card">
+    <h2>💞 Compatibility</h2>
+    <button onclick="compat()" class="btn-primary">Calculate</button>
+    <p id="compat"></p>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="card">
+    <h2>🎮 Who is more likely?</h2>
+    <button onclick="quiz()" class="btn-primary">Start</button>
+    <p id="quiz"></p>
+  </div>
+
+  <!-- CHAT -->
+  <div class="card">
+    <h2>💬 Private Chat</h2>
+    <div id="chat" class="chat-box"></div>
+    <div class="chat-input-group">
+      <input id="msg" placeholder="message..." onkeypress="if(event.key==='Enter') send()">
+      <button onclick="send()" class="btn-primary">Send</button>
+      <button onclick="voice()" class="btn-primary">🎤 Voice</button>
+      <button onclick="clearChat()" class="btn-danger">Clear</button>
+    </div>
+  </div>
+
+  <!-- MESSAGE VAULT -->
+  <div class="card">
+    <h2>💌 Message Vault (Malak & Salma)</h2>
+    <div class="vault-input-group">
+      <input id="name" placeholder="Malak or Salma">
+      <input id="text" placeholder="Write message..." onkeypress="if(event.key==='Enter') saveMsg()">
+      <button onclick="saveMsg()" class="btn-primary">Save</button>
+    </div>
+    <div id="vault" class="vault-box"></div>
+  </div>
+
+  <!-- CHESS GAME -->
+  <div class="card">
+    <h2>♟️ Chess Game</h2>
+    <div class="chess-controls">
+      <button onclick="startChessVsBot()" class="btn-primary">Play vs Bot</button>
+      <button onclick="startChessVsPerson()" class="btn-primary">Play vs Person</button>
+      <button onclick="resetChess()" class="btn-danger">Reset Board</button>
+    </div>
+    <p id="chessStatus" style="text-align: center; font-weight: bold; margin: 10px 0;"></p>
+    <div id="chessBoard" class="chess-board"></div>
+    <div id="capturedPieces" class="captured-pieces"></div>
+  </div>
+
+  <!-- TIC TAC TOE -->
+  <div class="card">
+    <h2>🎮 Tic Tac Toe</h2>
+    <div id="game" class="game-container"></div>
+    <button onclick="startGame()" class="btn-primary">New Game</button>
+  </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop volume="0.3">
+  <source src="https://assets.mixkit.co/active_storage/music/729/729-preview.mp3" type="audio/mpeg">
+</audio>
+
+<script src="chess.js"></script>
+<script src="tictactoe.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
